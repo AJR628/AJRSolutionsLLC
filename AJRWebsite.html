@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AJR Solutions LLC | Government Facility & Support Services</title>
+<meta name="description" content="AJR Solutions LLC is a Colorado small business that manages facility, grounds, and support service contracts for government agencies, delivering through a vetted network of local small-business partners.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314284b'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='%23ffffff' text-anchor='middle'%3EAJR%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#14284b; --navy-2:#1d3a6b; --ink:#1b2333; --muted:#5a6475;
+    --line:#e3e7ee; --bg:#ffffff; --soft:#f4f6fa; --accent:#c8a24a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:saturate(1.2) blur(6px)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;color:var(--navy);letter-spacing:.2px}
+  .mark{width:36px;height:36px;border-radius:8px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+  .nav ul{display:flex;gap:28px;list-style:none}
+  .nav ul a{text-decoration:none;color:var(--muted);font-size:15px;font-weight:500}
+  .nav ul a:hover{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;padding:12px 22px;border-radius:8px;font-weight:600;font-size:15px;transition:background .15s}
+  .btn:hover{background:var(--navy-2)}
+  .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
+  .btn.ghost:hover{background:rgba(255,255,255,.1)}
+
+  /* Hero */
+  .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:96px 0 88px}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+  .hero h1{font-size:clamp(32px,5vw,50px);line-height:1.15;font-weight:700;max-width:760px;margin-bottom:20px}
+  .hero p{font-size:19px;color:#d5deee;max-width:640px;margin-bottom:34px}
+  .hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+  .hero .actions .btn:first-child{background:var(--accent);color:var(--navy)}
+  .hero .actions .btn:first-child:hover{background:#d7b462}
+
+  /* Sections */
+  section{padding:84px 0}
+  section.alt{background:var(--soft)}
+  .head{max-width:680px;margin-bottom:44px}
+  .head h2{font-size:clamp(26px,3.4vw,34px);color:var(--navy);line-height:1.2;margin-bottom:12px}
+  .head p{color:var(--muted)}
+  .label{font-size:13px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px}
+  .card .ic{width:44px;height:44px;border-radius:10px;background:#eef2f9;display:grid;place-items:center;margin-bottom:16px}
+  .card .ic svg{width:22px;height:22px;stroke:var(--navy);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:18px;color:var(--navy);margin-bottom:8px}
+  .card p{font-size:15.5px;color:var(--muted)}
+
+  .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .step{display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px}
+  .num{flex:0 0 36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px}
+  .step h3{font-size:17px;color:var(--navy);margin-bottom:6px}
+  .step p{font-size:15.5px;color:var(--muted)}
+
+  .about{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start}
+  .about p{color:var(--muted);margin-bottom:16px}
+  .about p strong{color:var(--ink)}
+  .facts{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .facts h3{background:var(--navy);color:#fff;font-size:15px;font-weight:600;letter-spacing:.5px;padding:14px 22px}
+  .facts dl{display:grid;grid-template-columns:auto 1fr}
+  .facts dt,.facts dd{padding:12px 22px;border-top:1px solid var(--line);font-size:15px}
+  .facts dt{color:var(--muted);font-weight:500}
+  .facts dd{color:var(--ink);font-weight:600;text-align:right}
+
+  .contact{background:var(--navy);color:#fff;border-radius:16px;padding:52px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+  .contact h2{font-size:clamp(26px,3.4vw,34px);line-height:1.2;margin-bottom:12px}
+  .contact p{color:#d5deee}
+  .contact-list{list-style:none;display:grid;gap:14px}
+  .contact-list li{display:flex;gap:12px;align-items:center;font-size:16px}
+  .contact-list svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.8;flex:0 0 20px}
+  .contact-list a{text-decoration:none;color:#fff;font-weight:500;word-break:break-word}
+  .contact-list a:hover{text-decoration:underline}
+
+  footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media (max-width:860px){
+    .grid{grid-template-columns:1fr 1fr}
+    .steps,.about,.contact{grid-template-columns:1fr}
+    .contact{padding:36px 24px}
+    .nav ul{display:none}
+  }
+  @media (max-width:560px){
+    body{font-size:16px}
+    .grid{grid-template-columns:1fr}
+    .hero{padding:72px 0 64px}
+    section{padding:64px 0}
+    .nav .btn{padding:10px 16px;font-size:14px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand"><span class="mark">AJR</span>AJR Solutions LLC</a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a href="#contact" class="btn">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Government Contracting &middot; Aurora, Colorado</span>
+      <h1>Reliable facility and support services, managed end to end.</h1>
+      <p>AJR Solutions LLC is a Colorado small business that manages service and supply contracts for federal, state, and local agencies. We deliver through vetted local small-business partners, so you work with one accountable point of contact from award to closeout.</p>
+      <div class="actions">
+        <a href="#contact" class="btn">Request a Capability Statement</a>
+        <a href="#services" class="btn ghost">View Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <div class="label">Services</div>
+        <h2>What we deliver</h2>
+        <p>Clearly scoped, recurring, and on-call services for government facilities and grounds.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22V12"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/><path d="M12 15c0-3-2.5-5.5-6-5.5 0 3 2.5 5.5 6 5.5z"/></svg></div>
+          <h3>Grounds Maintenance</h3>
+          <p>Mowing, trimming, landscaping, seasonal cleanup, and on-call grounds support.</p>
+        </div>
+        <div class="card">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
+          <h3>Janitorial &amp; Custodial</h3>
+          <p>Routine and periodic cleaning for offices, facilities, and public spaces.</p>
+        </div>
+        <div class="card">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div>
+          <h3>Facility Maintenance</h3>
+          <p>General repairs, preventive maintenance, and building support services.</p>
+        </div>
+        <div class="card">
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="1" y="7" width="14" height="10" rx="1"/><path d="M15 10h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
+          <h3>Moving &amp; Delivery</h3>
+          <p>Office relocations, furniture moves, and scheduled delivery services.</p>
+        </div>
+        <div class="card">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></div>
+          <h3>Supplies &amp; Commodities</h3>
+          <p>Sourcing and delivery of facility, janitorial, and operational supplies.</p>
+        </div>
+        <div class="card">
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/><path d="M8 15l2.5 2.5L16 13"/></svg></div>
+          <h3>Event &amp; Site Support</h3>
+          <p>Setup, teardown, and on-site logistics for agency events and operations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach" class="alt">
+    <div class="wrap">
+      <div class="head">
+        <div class="label">Approach</div>
+        <h2>One accountable prime contractor</h2>
+        <p>We handle the contract management so agency staff can focus on their mission.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><h3>Single point of contact</h3><p>Responsive communication with contracting officers and site representatives, start to finish.</p></div></div>
+        <div class="step"><div class="num">2</div><div><h3>Vetted small-business partners</h3><p>Qualified, insured, local providers selected for each scope of work and location.</p></div></div>
+        <div class="step"><div class="num">3</div><div><h3>Compliance first</h3><p>Close attention to the performance work statement, wage determinations, insurance, and reporting requirements.</p></div></div>
+        <div class="step"><div class="num">4</div><div><h3>Quality oversight</h3><p>Scheduled check-ins, documented performance, and fast correction when issues come up.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <div class="label">About</div>
+        <div class="head" style="margin-bottom:20px"><h2>Built on operations experience</h2></div>
+        <p>AJR Solutions LLC was founded in Aurora, Colorado to connect government agencies with dependable small businesses that do excellent work.</p>
+        <p>Founder <strong>AJ Rhea</strong> brings about ten years of operations leadership from Denver's event industry, serving as a site captain and later as warehouse and operations manager. That work meant leading on-site crews, coordinating multiple vendors and rental companies, and delivering on fixed schedules where there was no room to miss a deadline.</p>
+        <p>AJR brings the same discipline to government contracts: clear plans, dependable partners, and steady communication.</p>
+      </div>
+      <div class="facts">
+        <h3>Company Data</h3>
+        <dl>
+          <dt>Legal Name</dt><dd>AJR Solutions LLC</dd>
+          <dt>UEI</dt><dd>CXHEQ2T43WC6</dd>
+          <dt>CAGE Code</dt><dd>Pending</dd>
+          <dt>Business Type</dt><dd>Small Business</dd>
+          <dt>Entity</dt><dd>Colorado LLC</dd>
+          <dt>Location</dt><dd>Aurora, CO</dd>
+          <dt>Service Area</dt><dd>Continental U.S.</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="alt">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2>Let's talk about your requirement.</h2>
+          <p>Contracting officers, program staff, and teaming partners are welcome to reach out directly.</p>
+        </div>
+        <ul class="contact-list">
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>AJ Rhea, Owner</span></li>
+          <li><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg><a href="mailto:aj@ajrsolutionsllc.com">aj@ajrsolutionsllc.com</a></li>
+          <li><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+14056204511">(405) 620-4511</a></li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Aurora, Colorado</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 AJR Solutions LLC. All rights reserved.</span>
+    <span>UEI CXHEQ2T43WC6 &middot; Aurora, Colorado</span>
+  </div>
+</footer>
+
+</body>
+</html>
